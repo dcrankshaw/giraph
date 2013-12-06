@@ -1,0 +1,844 @@
+    1  ls
+    2  ./graphx-shell 
+    3  sbt/sbt assembly
+    4  ./graphx-shell 
+    5  cd graph/src/test/
+    6  ls
+    7  mkdir resources
+    8  ls
+    9  cd resources/
+   10  vim log4j.properties
+   11  cd ../../
+   12  sbt/sbt
+   13  ./graphx-shell 
+   14  bin/stop-all.sh 
+   15  ~/graphx-utils/rebuild-graphx 
+   16  ./graphx-shell 
+   17  exit
+   18  cd ../../../../../
+   19  cd ../../
+   20  cd graphx
+   21  ls
+   22  sbt/sbt assembly/
+   23  sbt/sbt assembly
+   24  source ~/spark-ec2/ec2-variables.sh 
+   25  ./run-example org.apache.spark.examples.SplitUkUnion
+   26  sbt/sbt assembly/
+   27  sbt/sbt assembly
+   28  ./run-example org.apache.spark.examples.SplitUkUnion $MASTERS
+   29  sbt/sbt assembly
+   30  ./run-example org.apache.spark.examples.SplitUkUnion $MASTERS
+   31  sbt/sbt assembly
+   32  ~/graphx-utils/rebuild-graphx 
+   33  ./run-example org.apache.spark.examples.SplitUkUnion $MASTERS
+   34  ~/graphx-utils/rebuild-graphx 
+   35  ./run-example org.apache.spark.examples.SplitUkUnion $MASTERS
+   36  ~/graphx-utils/rebuild-graphx 
+   37  ./run-example org.apache.spark.examples.SplitUkUnion $MASTERS
+   38  cd /wiki_dump/data/
+   39  ls
+   40  cd ~/graphx/
+   41  grep -R mahout ./
+   42  grep -R -i -n hbase ./
+   43  grep -R -i -I -n hbase ./
+   44  ls
+   45  vim pom.xml 
+   46  exit
+   47  vim ~/graphx-utils/simple_run_benchmarks 
+   48  echo hdfs://$MASTERS:9000/
+   49  source ~/spark-ec2/ec2-variables.sh 
+   50  echo hdfs://$MASTERS:9000/
+   51  hadoop dfs -mkdir /uksplits
+   52  hadoop dfs -lks /uksplits
+   53  hadoop dfs -ls /uksplits
+   54  hadoop dfs -ls /
+   55  hadoop dfs -ls /uksplits
+   56  hadoop dfs -tail /uksplits/split_7
+   57  hadoop dfs -ls /uksplits/split_7/
+   58  hadoop dfs -rmr /uksplits/
+   59  hadoop dfs -mkdir /uksplits
+   60  hadoop dfs -ls /
+   61  hadoop dfs -ls /uksplits/
+   62  hadoop dfs -tail /uksplits/part-00052
+   63  hadoop dfs -rmr /uksplits
+   64  hadoop dfs -ls /uksplits/
+   65  vim
+   66  mv conf/log4j.properties conf/log4j.properties.backup
+   67  vim
+   68  git checkout master
+   69  sbt/sbt clean
+   70  sbt/sbt assembly
+   71  git checkout wiki-analysis 
+   72  git diff master
+   73  sbt/sbt assembly
+   74  exit
+   75  hadoop dfs -ls /
+   76  ls /wiki_dump/data/
+   77  exit
+   78  vim
+   79  hadoop dfs -ls /
+   80  vim
+   81  ls
+   82  ./graphx-shell 
+   83  l
+   84  ls
+   85  cd /wiki_dump/
+   86  ls
+   87  cd data/
+   88  ls
+   89  tail -100 enwiki-latest-pages-articles.xml 
+   90  ls
+   91  du -h
+   92  ls -la
+   93  vim concat_line.py
+   94  vim mahout
+   95  cd ~/graphx
+   96  source ~/spark-ec2/ec2-variables.sh 
+   97  git status
+   98  git add examples/src/main/scala/org/apache/spark/examples/ParseWikipedia.scala 
+   99  git status
+  100  git add -u
+  101  git status
+  102  git commit -am "Compiling version of rdd to read wikipedia dump."
+  103  git remote -v
+  104  git push origin wiki-analysis 
+  105  source ~/spark-ec2/ec2-variables.sh 
+  106  ./run-example org.apache.spark.examples.XMLInputTest spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki-latest-pages-articles.xml
+  107  history | grep grep
+  108  echo $MASTERS
+  109  hadoop dfs -ls /
+  110  ls
+  111  cat conf/log4j.properties.
+  112  cat conf/log4j.properties
+  113  cd conf/
+  114  ls
+  115  mv log4j.properties.backup log4j.properties
+  116  cat log4j.properties
+  117  cd ..
+  118  ls graph/target/
+  119  vim spark-class
+  120  ls graph/target/
+  121  tail -f graph/target/repl.log 
+  122  ls graph/target/
+  123  tail -f graph/target/repl.log 
+  124  vim
+  125  exit
+  126  cd /wiki_dump/data/
+  127  ls
+  128  less enwiki_top5000.xml 
+  129  exit
+  130  cd ~/graphx
+  131  sbt/sbt assembly/
+  132  sbt/sbt assembly
+  133  grep -R -n -I "newApiHadoopFile" examples/src
+  134  grep -R -n -I -i newApiHadoopFile examples/src
+  135  sbt/sbt assembly
+  136  hadoop dfs -ls /
+  137  cd /wiki_dump/
+  138  ls
+  139  cd data/
+  140  ls
+  141  hadoop dfs -rm uk0705
+  142  hadoop dfs -rm /uk0705
+  143  hadoop dfs -put enwiki-latest-pages-articles.xml /
+  144  cd ~/graphx
+  145  ./graphx-shell
+  146  ls
+  147  cd repl/src/main/
+  148  mkdir resources
+  149  cp ~/graphx/graph/src/test/resources/log4j.properties resources/
+  150  cd resources/
+  151  vim log4j.properties 
+  152  cd ..
+  153  cd ../../
+  154  cd ..
+  155  ls
+  156  ./graph
+  157  ./graphx-shell 
+  158  cp repl/src/main/resources/log4j.properties conf/
+  159  ./graphx-shell 
+  160  vim conf/log4j.properties
+  161  sbt/sbt assembly/
+  162  sbt/sbt assembly
+  163  ./graphx-shell
+  164  find . -name log4j.properties
+  165  cd repl/target/
+  166  ls
+  167  cd scala-2.9.3/
+  168  ls
+  169  vim classes/log4j.properties 
+  170  cd ~/graphx
+  171  vim assembly/target/scala-2.9.3/cache/assembly/global/assembly/7c92b8f66d559acb76d5c8a85c2d9b759a87c7ee_dir/log4j.properties 
+  172  vim assembly/target/scala-2.9.3/cache/assembly/global/assembly/56b9f87640d076134197ce939d197ab836cb82bb_ab2d24538aebcfb0058d21e32b2c2932a140ab2b/log4j.properties 
+  173  vim graphx-shell 
+  174  ./graphx-shell 
+  175  vim graphx-shell 
+  176  ./graphx-shell 
+  177  vim graphx-shell 
+  178  vim assembly/target/scala-2.9.3/cache/assembly/global/assembly/56b9f87640d076134197ce939d197ab836cb82bb_ab2d24538aebcfb0058d21e32b2c2932a140ab2b/log4j.properties 
+  179  grep -R -I "og4j.appender.TLA=org.apache.hadoop.mapred.TaskLogAppender" ./
+  180  sbt/sbt clean
+  181  grep -R -I "og4j.appender.TLA=org.apache.hadoop.mapred.TaskLogAppender" ./
+  182  sbt/sbt assembly
+  183  git status
+  184  rm -rf repl/src/main/resources/
+  185  git status
+  186  sbt/sbt clean
+  187  sbt/sbt assembly
+  188  git status
+  189  git commit -am "Minor build file update."
+  190  vim
+  191  git status
+  192  git add ImportWikipedia.scala 
+  193  git status
+  194  gut add -u
+  195  git add -u
+  196  git status
+  197  git commit -am "Added some wikipedia parsing support."
+  198  git status
+  199  git push origin wiki-analysis 
+  200  exit
+  201  cd ../../
+  202  cd graphx
+  203  sbt/sbt assembly/
+  204  sbt/sbt assembly
+  205  sbt/sbt clean
+  206  sbt/sbt assembly
+  207  sbt/sbt clean
+  208  sbt/sbt assembly/
+  209  sbt/sbt assembly
+  210  history | grep find
+  211  man find
+  212  find -iname log4j
+  213  find -iname log4j.properties
+  214  git status
+  215  git add -u
+  216  git commit --amend
+  217  find -iname log4j.properties
+  218  vim assembly/target/scala-2.9.3/cache/assembly/global/assembly/56b9f87640d076134197ce939d197ab836cb82bb_ab2d24538aebcfb0058d21e32b2c2932a140ab2b/log4j.properties 
+  219  vim ./examples/target/scala-2.9.3/cache/examples/global/assembly/56b9f87640d076134197ce939d197ab836cb82bb_ab2d24538aebcfb0058d21e32b2c2932a140ab2b/log4j.properties
+  220  vim run-example
+  221  ./run-example 
+  222  ./run-example org.apache.spark.graph.Analytics
+  223  vim run-example
+  224  vim bin/compute-classpath.sh 
+  225  vim run-example
+  226  ./run-example 
+  227  ./run-example org.apache.spark.graph.Analytics
+  228  vim run-example
+  229  vim graphx-shell 
+  230  ls
+  231  vim spark-class
+  232  ./graphx-shell 
+  233  vim bin/compute-classpath.
+  234  vim bin/compute-classpath.sh 
+  235  vim spark-class
+  236  ./graphx-shell 
+  237  vim spark-class
+  238  ./graphx-shell 
+  239  cd ~/ephemeral-hdfs
+  240  find -iname log4j.properties
+  241  cd conf/
+  242  ls
+  243  vim log4j.properties 
+  244  mv log4j.properties log4j.properties.backup
+  245  cd ~/graphx
+  246  ./graphx-shell 
+  247  sbt/sbt assembly
+  248  ./graphx-shell 
+  249  ~/graphx-utils/rebuild-graphx 
+  250  ./graphx-shell 
+  251  exit
+  252  ls
+  253  vim reconfig_cluster.sh 
+  254  ./reconfig_cluster.sh 
+  255  tmux
+  256  cd graphx
+  257  cd ~/graphx-utils/
+  258  git status
+  259  git diff
+  260  git commit -am "add iters option"
+  261  git push origin mater
+  262  git push origin master
+  263  exit
+  264  vim reconfig_cluster.sh 
+  265  ls
+  266  cd ephemeral-hdfs/
+  267  ls
+  268  cd conf/
+  269  ls
+  270  htop
+  271  cd
+  272  vim reconfig_cluster.sh 
+  273  ~/graphx-utils/rebuild-graphx 
+  274  cd graphx
+  275  ./graphx-shell 
+  276  ./graphx
+  277  val hd = "hdfs://ec2-54-242-6-18.compute-1.amazonaws.com:9000/"
+  278  ./graphx-shell 
+  279  ls
+  280  ./graphx-shell 
+  281  ~/graphx-utils/
+  282  ~/graphx-utils/rebuild-graphx 
+  283  ssh 50.19.31.10
+  284  ssh 54.227.122.152
+  285  ssh 50.19.31.10
+  286  exit
+  287  ./reconfig_cluster.sh 
+  288  source ~/spark-ec2/ec2-variables.sh 
+  289  echo $MASTERS
+  290  hadoop dfs -ls /
+  291  cd graphx
+  292  vim
+  293  hadoop dfs -ls /
+  294  hadoop dfs -ls /uksplits
+  295  vim ImportWikipedia.scala 
+  296  echo $MASTERS
+  297  hadoop dfs -ls /
+  298  hadoop dfs -ls /uksplits
+  299  hadoop dfs -tail /uksplits/part-147
+  300  hadoop dfs -tail /uksplits/part-00380
+  301  vim ImportWikipedia.scala 
+  302  exit
+  303  hadoop dfs -ls
+  304  hadoop dfs -ls /
+  305  ls /wiki_dump/
+  306  ls
+  307  cd /wiki_dump/
+  308  cd data/
+  309  ls
+  310  cd ~/graphx
+  311  ~/graphx-utils/rebuild-graphx 
+  312  hadoop dfs -ls /
+  313  ls -la /wiki_dump/data/
+  314  hadoop dfs -ls /
+  315  ls
+  316  vim ImportWikipedia.scala 
+  317  less ImportWikipedia.scala 
+  318  hadoop dfs -rmr /uksplits
+  319  hadoop dfs -ls /
+  320  source ~/spark-ec2/ec2-variables.sh 
+  321  echo $MASTERS 
+  322  exit
+  323  tmux
+  324  exit
+  325  ls
+  326  pwd
+  327  cd /mnt
+  328  ls
+  329  cd 
+  330  yum install -y emacs cmake
+  331  ~/ephemeral-hdfs/bin/slaves.sh yum install -y openmpi-devel zlib-devel
+  332  ~/ephemeral-hdfs/bin/slaves.sh ln -s /usr/lib64/openmpi/bin/* /usr/bin/.
+  333  git clone https://github.com/jegonzal/graphlab.git /mnt/graphlab
+  334  cd /mnt/graphlab
+  335  git checkout spark-ec2-build
+  336  ./configure
+  337  cd release/toolkits/graph_analytics
+  338  make -j8
+  339  cd /mnt
+  340  ~/spark-ec2/copy-dir.sh graphlab
+  341  hadoop fs -ls
+  342  hadoop fs -ls /
+  343  hadoop fs -ls /uk0705
+  344  hadoop fs -ls /uk0705/
+  345  ls
+  346  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/undirected_triangle_count --graph=$HDFS/soc-LiveJournal1.txt --format=snap --ncpus=8)
+  347  cd graphlab/release/toolkits/graph_analytics/
+  348  ls
+  349  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/undirected_triangle_count --graph=$HDFS/soc-LiveJournal1.txt --format=snap --ncpus=8)
+  350  export HDFS=hdfs://ec2-54-242-6-18.compute-1.amazonaws.com:9000
+  351  export GRAPHLAB=/mnt/graphlab
+  352  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/undirected_triangle_count --graph=$HDFS/soc-LiveJournal1.txt --format=snap --ncpus=8)
+  353  hadoop fs -ls
+  354  hadoop fs -ls /
+  355  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/undirected_triangle_count --graph=$HDFS/uksplits --format=snap --ncpus=8)
+  356  clear
+  357  ls
+  358  hadoop fs -ls /
+  359  hadoop fs -ls /uksplits
+  360  hadoop fs -ls /uksplits/part-00000
+  361  hadoop fs -head /uksplits/part-00000
+  362  hadoop fs -cat /uksplits/part-00000 | head
+  363  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/undirected_triangle_count --graph=$HDFS/uksplits --format=snap --ncpus=8)
+  364  hadoop fs -ls /uksplits/
+  365  hadoop fs -ls /uksplits/ | less
+  366  hadoop fs -rm /uksplits/_SUCCESS
+  367  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/undirected_triangle_count --graph=$HDFS/uksplits --format=snap --ncpus=8)
+  368  mpiexec  --hostfile ~/spark-ec2/slaves killall ndirected_triangle_count
+  369  ssh ec2-50-19-31-10.compute-1.amazonaws.com
+  370  tail /wiki_dump/data/enwiki-latest-pages-articles.xml 
+  371  exit
+  372  vim reconfig_cluster.sh 
+  373  ./reconfig_cluster.sh 
+  374  tmux
+  375  ~/ephemeral-hdfs/bin/slaves.sh yum install -y openmpi-devel zlib-devel emacs cmake
+  376  ~/ephemeral-hdfs/bin/slaves.sh ln -s /usr/lib64/openmpi/bin/* /usr/bin/.
+  377  git clone https://github.com/jegonzal/graphlab.git /mnt/graphlab
+  378  cd /mnt/graphlab
+  379  git checkout spark-ec2-build
+  380  ./configure
+  381  cd release/toolkits/graph_analytics
+  382  make -j8
+  383  cd /mnt
+  384  ~/spark-ec2/copy-dir.sh graphlab
+  385  export HDFS=hdfs://ec2-54-211-202-9.compute-1.amazonaws.com:9000
+  386  export GRAPHLAB=/mnt/graphlab
+  387  hadoop fs -ls /
+  388  hadoop fs -ls /uksplits
+  389  hadoop fs -ls /uksplits/
+  390  exit
+  391  tmux a -t 0
+  392  exit
+  393  hadoop fs -ls /uksplit
+  394  hadoop fs -ls /uksplits
+  395  export HDFS=hdfs://ec2-54-211-202-9.compute-1.amazonaws.com:9000
+  396  export GRAPHLAB=/mnt/graphlab
+  397  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/undirected_triangle_count --graph=$HDFS/uksplits --format=snap --ncpus=8)
+  398  mpiexec --hostfile ~/spark-ec2/slaves killall undirected_triangle_count
+  399  ls
+  400  mpiexec --hostfile ~/spark-ec2/slaves hostname
+  401  ~/ephemeral-hdfs/bin/slaves.sh hostname
+  402  ec2-54-224-73-97.compute-1.amazonaws.com
+  403  ssh ec2-54-224-73-97.compute-1.amazonaws.com
+  404  exit
+  405  vim
+  406  exit
+  407  vim /wiki_dump/data/enwiki_top5000.xml 
+  408  hadoop dfs
+  409  hadoop dfs -put /wiki_dump/data/enwiki_top5000.xml /
+  410  hadoop dfs -ls /
+  411  sbt/sbt assembly/
+  412  sbt/sbt assembly
+  413  hadoop dfs -ls /
+  414  ~/graphx-utils/rebuild-graphx 
+  415  hadoop dfs -ls /
+  416  hadoop dfs -ls /uksplits/
+  417  hadoop dfs
+  418  hadoop dfs -du /
+  419  hadoop dfs ls /uksplits
+  420  hadoop dfs -ls /uksplits
+  421  hadoop dfs -rmr /uksplits
+  422  hadoop dfs -ls /uksplits
+  423  hadoop dfs -ls /uksplits/
+  424  hadoop dfs -du /
+  425  hadoop dfs -du /uksplits
+  426  hadoop dfs
+  427  hadoop dfs -ls /uksplits
+  428  echo $MASTERS
+  429  source ~/spark-ec2/ec2-variables.sh 
+  430  echo $MASTERS
+  431  hadoop dfs -ls /
+  432  hadoop dfs -rmr /uksplits
+  433  hadoop dfs -ls /
+  434  hadoop dfs -ls /uksplits
+  435  hadoop dfs -ls /uksplits | grep -i success
+  436  hadoop dfs -rm /uksplits/_SUCCESS
+  437  hadoop dfs -ls /uksplits
+  438  hadoop dfs -ls /
+  439  vim ImportWikipedia.scala 
+  440  sbt/sbt
+  441  ls
+  442  mv ImportWikipedia.scala ImportWikipedia.scala.backup
+  443  mv WikiArticle.scala WikiArticle.scala.backup
+  444  sbt/sbt
+  445  ~/graphx-utils/rebuild-graphx 
+  446  echo $MASTERS 
+  447  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia hdfs://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  448  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  449  ~/graphx-utils/rebuild-graphx 
+  450  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  451  ~/graphx-utils/rebuild-graphx 
+  452  git status
+  453  git add -u
+  454  git commit -am "More changes."
+  455  git status
+  456  git push origin wiki-analysis 
+  457  exit
+  458  ls
+  459  cat conf/log4j.properties
+  460  tail -f graph/target/repl.log 
+  461  echo $MASTER
+  462  source ~/spark-ec2/ec2-variables.sh 
+  463  echo $MASTER
+  464  echo $MASTERS
+  465  less WikiArticle.scala 
+  466  grep -R -n -i kryo core/src/
+  467  grep -R -n -i register core/src/
+  468  less WikiArticle.scala 
+  469  grep -R -n I transient graph/src/
+  470  grep -R -n -I transient graph/src/
+  471  less WikiArticle.scala 
+  472  cd graph/src/main/scala/org/apache/spark/graph/
+  473  mkdir examples
+  474  ls
+  475  exit
+  476  ~/reconfig_cluster.sh 
+  477  ls
+  478  stop-all.sh 
+  479  spark/bin/stop-all.sh 
+  480  ./reconfig_cluster.sh 
+  481  source ~/spark-ec2/ec2-variables.sh 
+  482  echo $MASTERS
+  483  cd graphx
+  484  ./graphx-shell 
+  485  hadoop dfs -ls /
+  486  ./graphx-shell 
+  487  ~/graphx-utils/rebuild-graphx 
+  488  ./graphx-shell 
+  489  git status
+  490  git add -u
+  491  git status
+  492  git add *.backup
+  493  git status
+  494  git add graph/src/main/scala/org/apache/spark/graph/examples/
+  495  git status
+  496  git commit -am "Fleshed out wikipedia example."
+  497  git push origin wiki-analysis 
+  498  hadoop dfs -ls /
+  499  exit
+  500  tmux a -t 0
+  501  exit
+  502  ls ~/graphx-utils/
+  503  cd graphx
+  504  hadoop dfs -ls /
+  505  hadoop dfs -put /wiki_dump/data/enwiki_top5000.xml /
+  506  vim ~/reconfig_cluster.sh 
+  507  ~/graphx-utils/rebuild-graphx 
+  508  source ~/spark-ec2/ec2-variables.sh 
+  509  echo $MASTERS 
+  510  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  511  less graph/target/repl.log 
+  512  exit
+  513  vim reconfig_cluster.sh 
+  514  vim ~/reconfig_cluster.sh 
+  515  ./reconfig_cluster.sh 
+  516  hadoop dfs -ls /
+  517  hadoop dfs -rm /uk0705 /soc-LiveJournal1.txt
+  518  hadoop dfs -ls /
+  519  vim reconfig_cluster.sh 
+  520  ./reconfig_cluster.sh 
+  521  echo $MASTERS
+  522  source ~/spark-ec2/ec2-variables.sh 
+  523  echo $MASTERS
+  524  hadoop dfs -ls /
+  525  hadoop dfs -ls /uksplits
+  526  hadoop dfs -rm /uksplits/_SUCCESS
+  527  hadoop dfs -ls /
+  528  ./graphx-shell 
+  529  ps aux | grep vim
+  530  kill -9 16892
+  531  ps aux | grep vim
+  532  vim
+  533  # Install GraphLab
+  534  ~/ephemeral-hdfs/bin/slaves.sh yum install -y openmpi-devel zlib-devel emacs cmake
+  535  ~/ephemeral-hdfs/bin/slaves.sh ln -s /usr/lib64/openmpi/bin/* /usr/bin/.
+  536  git clone https://github.com/jegonzal/graphlab.git /mnt/graphlab
+  537  cd /mnt/graphlab
+  538  git checkout spark-ec2-build
+  539  ./configure
+  540  cd release/toolkits/graph_analytics
+  541  make -j8
+  542  cd /mnt
+  543  ~/spark-ec2/copy-dir.sh graphlab
+  544  export HDFS=hdfs://ec2-54-211-202-9.compute-1.amazonaws.com:9000
+  545  export GRAPHLAB=/mnt/graphlab
+  546  time (mpiexec --hostfile ~/spark-ec2/slaves -n 1 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/pagerank --graph=$HDFS/uksplits --format=snap --ncpus=8 --tol=0 --iterations=20)
+  547  hadoop fs -ls /
+  548  hadoop fs -ls /uksplits
+  549  export HDFS=hdfs://ec2-54-211-146-130.compute-1.amazonaws.com:9000
+  550  hadoop fs -ls /uksplits
+  551  time (mpiexec --hostfile ~/spark-ec2/slaves -n 1 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/pagerank --graph=$HDFS/uksplits --format=snap --ncpus=8 --tol=0 --iterations=20)
+  552  clear
+  553  exit
+  554  vim
+  555  git status
+  556  git add -u
+  557  git status
+  558  git commit -am "Got wiki graph mostly working. For some reason MessageToPartition is causing non-serializable exceptions."
+  559  git push origin wiki-analysis 
+  560  exit
+  561  cd graph/src/main/scala/org/apache/spark/graph/examples/
+  562  ls -l
+  563  ls -a
+  564  rm .AnalyzeWikipedia.scala.swp
+  565  rm .WikiArticle.scala.swp 
+  566  history | grep run-example
+  567  echo ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  568  ~/graphx-utils/rebuild-graphx 
+  569  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  570  cd ~/graphx
+  571  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  572  source ~/spark-ec2/ec2-variables.sh 
+  573  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  574  sbt/sbt
+  575  ~/graphx-utils/rebuild-graphx 
+  576  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  577  ~/graphx-utils/rebuild-graphx 
+  578  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  579  ~/graphx-utils/rebuild-graphx 
+  580  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  581  ~/graphx-utils/rebuild-graphx 
+  582  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  583  sbt/sbt compile
+  584  ~/graphx-utils/rebuild-graphx 
+  585  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  586  sbt/sbt compile
+  587  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  588  ~/graphx-utils/rebuild-graphx 
+  589  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  590  ~/graphx-utils/rebuild-graphx 
+  591  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  592  ~/graphx-utils/rebuild-graphx 
+  593  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  594  exit
+  595  exit
+  596  tmux
+  597  exit
+  598  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/pagerank --graph=$HDFS/uksplits --format=snap --ncpus=8 --tol=0 --iterations=20)
+  599  export HDFS=hdfs://ec2-54-211-146-130.compute-1.amazonaws.com:9000
+  600  export GRAPHLAB=/mnt/graphlab
+  601  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/pagerank --graph=$HDFS/uksplits --format=snap --ncpus=8 --tol=0 --iterations=20)
+  602  time (mpiexec --hostfile ~/spark-ec2/slaves -n 1 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/pagerank --graph=$HDFS/uksplits --format=snap --ncpus=8 --tol=0 --iterations=20)
+  603  hadoop fs -ls /
+  604  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/connected_components --graph=$HDFS/uksplits --format=snap --ncpus=8)
+  605  ls $GRAPHLAB
+  606  ls /mnt/graphlab/release/toolkits/graph_analytics/
+  607  time (mpiexec --hostfile ~/spark-ec2/slaves -n 16 env CLASSPATH=$(hadoop classpath) $GRAPHLAB/release/toolkits/graph_analytics/connected_component --graph=$HDFS/uksplits --format=snap --ncpus=8)
+  608  tmux
+  609  ls
+  610  cd ~/graphx
+  611  less graph/target/repl.log 
+  612  source ~/spark-ec2/ec2-variables.sh 
+  613  echo $MASTERS 
+  614  less graph/target/repl.log 
+  615  cd /wiki_dump/data/
+  616  ls
+  617  cd ~/graphx
+  618  less graph/target/repl.log 
+  619  ln -s ~/graphx-utils/rebuild-graphx ~/
+  620  ls -la
+  621  ls ~/
+  622  ls -l ~/
+  623  tail -f graph/target/repl.log
+  624  exit
+  625  hadoop dfs -ls /
+  626  cd graphx
+  627  vim
+  628  exit
+  629  vim reconfig_cluster.sh 
+  630  ./reconfig_cluster.sh 
+  631  cd graphx
+  632  history | grep run-example
+  633  source ~/spark-ec2/ec2-variables.sh 
+  634  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  635  ~/graphx-utils/rebuild-graphx 
+  636  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  637  sbt/sbt compile
+  638  ~/graphx-utils/rebuild-graphx 
+  639  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  640  rm ~/graphx-utils/.simple_run_benchmarks.swp
+  641  ./run-example org.apache.spark.graph.Analytics spark://$MASTERS:7077 pagerank hdfs://$MASTERS:9000/soc-LiveJournal1.txt --numIter=2 --numEPart=128 --partStrategy=RandomVertexCut
+  642  ~/graphx-utils/rebuild-graphx 
+  643  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  644  hadoop dfs -ls /
+  645  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki-latest-pages-articles.xml
+  646  ~/graphx-utils/rebuild-graphx 
+  647  ~/rebuild-graphx 
+  648  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki-latest-pages-articles.xml
+  649  ~/rebuild-graphx 
+  650  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki-latest-pages-articles.xml
+  651  ~/rebuild-graphx 
+  652  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki-latest-pages-articles.xml
+  653  git status
+  654  git add -u
+  655  git commit -am "Fixed serialization issue. wikipedia graph now working."
+  656  git push origin wiki-analysis 
+  657  ~/rebuild-graphx 
+  658  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki-latest-pages-articles.xml
+  659  ~/rebuild-graphx 
+  660  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki-latest-pages-articles.xml
+  661  git status
+  662  git add -u
+  663  git status
+  664  git commit -m "Added some debug print statements."
+  665  exit
+  666  tmux a -t 0
+  667  exit
+  668  tmux
+  669  exit
+  670  tmux a -t 0
+  671  exit
+  672  vim reconfig_cluster.sh 
+  673  ./reconfig_cluster.sh 
+  674  scala
+  675  cd graphx/graph/target
+  676  less repl.log 
+  677  hadoop dfs -ls /
+  678  less repl.log 
+  679  hadoop dfs -ls /
+  680  exit
+  681  hadoop dfs -ls /
+  682  cd graphx
+  683  grep -R -n -I  core/src/
+  684  grep -R -n -I "Ordering\.by"  core/src/
+  685  grep -R -n -I "Ordering\.on"  core/src/
+  686  grep -R -n -I Ordering  core/src/
+  687  ~/rebuild-graphx 
+  688  sbt/sbt compile
+  689  ~/rebuild-graphx 
+  690  source ~/spark-ec2/ec2-variables.sh 
+  691  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  692  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki-latest-pages-articles.xml
+  693  ~/rebuild-graphx 
+  694  sbt/sbt compile
+  695  ~/rebuild-graphx 
+  696  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  697  ~/rebuild-graphx 
+  698  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  699  ~/rebuild-graphx 
+  700  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  701  ~/rebuild-graphx 
+  702  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  703  ~/rebuild-graphx 
+  704  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  705  ~/rebuild-graphx 
+  706  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  707  ~/rebuild-graphx 
+  708  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  709  ~/rebuild-graphx 
+  710  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  711  ~/rebuild-graphx 
+  712  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  713  ~/rebuild-graphx 
+  714  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  715  ~/rebuild-graphx 
+  716  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  717  history | grep run-example
+  718  ./run-example org.apache.spark.graph.Analytics spark://$MASTERS:7077 pagerank hdfs://$MASTERS:9000/soc-LiveJournal1.txt --numIter=2 --numEPart=128 --partStrategy=RandomVertexCut
+  719  history | grep run-example
+  720  ~/rebuild-graphx 
+  721  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  722  ~/rebuild-graphx 
+  723  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  724  ~/rebuild-graphx 
+  725  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  726  git diff master graph/src/main/scala/org/apache/spark/graph/VertexSetRDD.scala
+  727  git diff master graph/src/main/scala/org/apache/spark/graph/Graph.scala
+  728  git diff master graph/src/main/scala/org/apache/spark/graph/impl/GraphImpl.scala
+  729  ~/rebuild-graphx 
+  730  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml hdfs://$MASTERS:9000/soc-LiveJournal1.txt
+  731  ~/rebuild-graphx 
+  732  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml hdfs://$MASTERS:9000/soc-LiveJournal1.txt
+  733  ~/rebuild-graphx
+  734  ./run-example org.apache.spark.graph.examples.AnalyzeWikipedia spark://$MASTERS:7077 hdfs://$MASTERS:9000/enwiki_top5000.xml
+  735  vim
+  736  ls graph/src/main/scala/org/apache/spark/graph/examples/
+  737  ls
+  738  vim
+  739  cd
+  740  exivim reconfig_cluster.sh 
+  741  ./reconfig_cluster.sh 
+  742  mvn -version
+  743  cd /usr/localgir
+  744  cd /usr/local/giraph/
+  745  mvn -DskipTests
+  746  mvn package -DskipTests
+  747  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.PageRankVertex -eif org.apache.giraph.io.formats.LongNullTextEdgeInputFormat -eip /web-google-clean.tsv -of org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30
+  748  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.PageRankVertex -eif org.apache.giraph.io.formats.LongNullTextEdgeInputFormat -eip /web-google-clean.tsv -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30
+  749  mvn package -DskipTests
+  750  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.PageRankVertex -eif org.apache.giraph.io.formats.LongNullTextEdgeInputFormat -eip /web-google-clean.tsv -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30
+  751  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.PageRankVertex -eif org.apache.giraph.io.formats.LongNullTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30
+  752  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongNullTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30
+  753  jps
+  754  cat ~/spark/conf/slaves 
+  755  ssh ec2-174-129-187-50.compute-1.amazonaws.com
+  756  clear
+  757  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongNullTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30
+  758  frep -R -n -I SUPERSTEP_COUNT giraph-core/src/
+  759  grep -R -n -I SUPERSTEP_COUNT giraph-core/src/
+  760  ls
+  761  grep -R -n -I SUPERSTEP_COUNT giraph-examples/src/
+  762  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongNullTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30
+  763  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongNullTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30 -fdgdfgdf
+  764  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongNullTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30
+  765  mvn package -DskipTests
+  766  mvn
+  767  mvn -h
+  768  ls
+  769  pwd
+  770  vim pom.xml 
+  771  ls
+  772  mvn clean
+  773  mvn package -DskipTests
+  774  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 30
+  775  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128
+  776  hadoop dfs -rmr /pr_giraph_lj
+  777  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128
+  778  ls
+  779  hadoop dfs -ls /
+  780  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128
+  781  hadoop dfs -rmr /pr_giraph_lj
+  782  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128
+  783  binbin/halt-application --zkServer ip-10-80-159-63.ec2.internal:22181 --zkNode /_hadoopBsp/job_201312051950_0005/_haltComputation
+  784  bin/halt-application --zkServer ip-10-80-159-63.ec2.internal:22181 --zkNode /_hadoopBsp/job_201312051950_0005/_haltComputation
+  785  sudo bin/halt-application --zkServer ip-10-80-159-63.ec2.internal:22181 --zkNode /_hadoopBsp/job_201312051950_0005/_haltComputation
+  786  ls
+  787  clear
+  788  jps
+  789  hadoop job -kill job_201312051950_0005
+  790  clear
+  791  history
+  792  exit
+  793  cd ~/ephemeral-hdfs/conf/
+  794  ls
+  795  vim mapred-site.xml 
+  796  cd ../b
+  797  cd ../
+  798  ls
+  799  cd bin/
+  800  ls
+  801  ./stop-all.sh 
+  802  ~/spark-ec2/copy-dir ~/ephemeral-hdfs/
+  803  ./start-all.sh 
+  804  ~/rebuild-graphx 
+  805  exit
+  806  cd /usr/local/giraph/
+  807  vim ~/.vim/bundle/vim-colors-solarized/
+  808  ls
+  809  pwd
+  810  grep -R -n registerAggregator -I ./
+  811  grep -R -n -I masterComputeClass ./
+  812  grep -R -n -I setMasterComputeClass ./
+  813  grep -R -n -I setMasterComputeClass giraph-core/src/main/
+  814  exit
+  815  grep -R MasterCompute ./giraph-core/src/main/ ./giraph-examples/src/main/
+  816  ls
+  817  mvn clean
+  818  mvn -h
+  819* 
+  820  mvn package -DskipTests -rf :giraph-core
+  821  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128 -wc org.apache.giraph.examples.SimplePageRankComputation.SimplePageRankMasterCompute
+  822  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128 -wc org.apache.giraph.master.DefaultMasterCompute
+  823  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128 -mc org.apache.giraph.master.DefaultMasterCompute
+  824  hadoop dfs -rmr /pr_giraph_lj/
+  825  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128 -mc org.apache.giraph.master.DefaultMasterCompute
+  826  hadoop job -kill job_201312060152_0005
+  827  hadoop dfs -rmr /pr_giraph_lj/
+  828  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128 -mc org.apache.giraph.examples.SimplePageRankComputation$SimplePageRankMasterCompute
+  829  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128 -mc "org.apache.giraph.examples.SimplePageRankComputation$SimplePageRankMasterCompute"
+  830* 
+  831  mvn clean
+  832  mvn package -DskipTests
+  833  mvn clean
+  834  mvn package -DskipTests
+  835  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr_giraph_lj -w 128 -mc "org.apache.giraph.examples.SimplePageRankComputation$SimplePageRankMasterCompute"
+  836  hadoop dfs -rmr /pr_giraph_lj
+  837  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr1 -w 63 -mc "org.apache.giraph.examples.SimplePageRankComputation$SimplePageRankMasterCompute"
+  838  hadoop job -kill job_201312060152_0006
+  839  hadoop job -kill job_201312060152_0007
+  840  hadoop dfs -ls /
+  841  hadoop dfs -rmr /pr1
+  842  hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimplePageRankComputation -eif org.apache.giraph.io.formats.LongDefaultFloatTextEdgeInputFormat -eip /soc-LiveJournal1_clean.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /pr1 -w 63 -mc "org.apache.giraph.examples.SimplePageRankComputation$SimplePageRankMasterCompute"
+  843  mvn package -DskipTests
+  844  history > hist.txt

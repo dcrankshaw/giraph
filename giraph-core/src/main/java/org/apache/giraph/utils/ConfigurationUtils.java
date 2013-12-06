@@ -300,9 +300,12 @@ public final class ConfigurationUtils {
               .forName(cmd.getOptionValue("wc")));
     }
     if (cmd.hasOption("mc")) {
+      System.out.println(cmd.getOptionValue("mc"));
+      /* String myMC = "org.apache.giraph.examples.SimplePageRankComputation$SimplePageRankMasterCompute"; */
       conf.setMasterComputeClass(
           (Class<? extends MasterCompute>) Class
               .forName(cmd.getOptionValue("mc")));
+              /* .forName(myMC)); */
     }
     if (cmd.hasOption("aw")) {
       conf.setAggregatorWriterClass(

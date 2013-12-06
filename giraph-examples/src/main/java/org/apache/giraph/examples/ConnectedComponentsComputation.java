@@ -64,6 +64,8 @@ public class ConnectedComponentsComputation extends
 
     // First superstep is special, because we can simply look at the neighbors
     if (getSuperstep() == 0) {
+      // initialize to my Vid
+      currentComponent =  vertex.getId().get();
       for (Edge<IntWritable, NullWritable> edge : vertex.getEdges()) {
         int neighbor = edge.getTargetVertexId().get();
         if (neighbor < currentComponent) {

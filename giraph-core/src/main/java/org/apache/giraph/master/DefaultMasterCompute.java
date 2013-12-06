@@ -45,6 +45,7 @@ public class DefaultMasterCompute extends MasterCompute {
   @Override
   public void initialize() throws InstantiationException,
       IllegalAccessException {
+      System.out.println("DefaultMasterCompute registering aggregators.");
   }
 
 }

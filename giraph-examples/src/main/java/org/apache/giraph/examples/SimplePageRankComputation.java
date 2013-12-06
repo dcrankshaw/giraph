@@ -52,7 +52,7 @@ import java.util.List;
 public class SimplePageRankComputation extends BasicComputation<LongWritable,
     DoubleWritable, FloatWritable, DoubleWritable> {
   /** Number of supersteps for this test */
-  public static final int MAX_SUPERSTEPS = 30;
+  public static final int MAX_SUPERSTEPS = 20;
   /** Logger */
   private static final Logger LOG =
       Logger.getLogger(SimplePageRankComputation.class);
@@ -167,6 +167,7 @@ public class SimplePageRankComputation extends BasicComputation<LongWritable,
       registerAggregator(SUM_AGG, LongSumAggregator.class);
       registerPersistentAggregator(MIN_AGG, DoubleMinAggregator.class);
       registerPersistentAggregator(MAX_AGG, DoubleMaxAggregator.class);
+      System.out.println("Registering aggregators.");
     }
   }
 
