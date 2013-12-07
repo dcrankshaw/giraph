@@ -760,6 +760,7 @@ public interface GiraphConstants {
   StrConfOption ZOOKEEPER_JAVA_OPTS =
       new StrConfOption("giraph.zkJavaOpts",
           "-Xmx512m -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC " +
+          /* "-Xmx30g -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC " + */
           "-XX:CMSInitiatingOccupancyFraction=70 -XX:MaxGCPauseMillis=100",
           "Java opts passed to ZooKeeper startup");
 

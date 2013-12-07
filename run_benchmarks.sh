@@ -5,7 +5,8 @@
 
 tc=/usr/bin/time
 
-numtrial=5
+
+numtrial=10
 cc_command="hadoop jar \
   /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar \
   org.apache.giraph.GiraphRunner org.apache.giraph.examples.ConnectedComponentsComputation \
@@ -25,13 +26,13 @@ pr_command="hadoop jar \
   -w 64 \
   -mc org.apache.giraph.examples.SimplePageRankComputation\$SimplePageRankMasterCompute"
 
-
+giraph_output=~/giraph_output_16
 
 counter=0  
-for run in {1..5}
+for run in {1..$numtrial}
 do
   echo $counter
-  $tc -f "TOTAL: %e seconds" $pr_command 2>&1 | tee -a ~/giraph_output/pr_runs.txt
+  $tc -f "TOTAL: %e seconds" $pr_command 2>&1 | tee -a $giraph_output/pr_runs.txt
   # -w 64 \
   # -mc "org.apache.giraph.examples.SimplePageRankComputation\$SimplePageRankMasterCompute"
 
@@ -43,12 +44,10 @@ done
 
 
 counter=0  
-for run in {1..5}
+for run in {1..$numtrial}
 do
   echo $counter
-  $tc -f "TOTAL: %e seconds" $cc_command 2>&1 | tee -a ~/giraph_output/cc_runs.txt
-  # -w 64 \
-  # -mc "org.apache.giraph.examples.SimplePageRankComputation\$SimplePageRankMasterCompute"
+  $tc -f "TOTAL: %e seconds" $cc_command 2>&1 | tee -a $giraph_output/cc_runs.txt
 
   hadoop dfs -rmr /cc_del
   # echo "" >> $file
