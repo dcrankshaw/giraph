@@ -7,33 +7,35 @@
 
   <property>
     <name>mapred.job.tracker</name>
-    <value>ec2-50-16-82-129.compute-1.amazonaws.com:9001</value>
+    <value>ec2-174-129-126-32.compute-1.amazonaws.com:9001</value>
   </property>
 
   <property>
     <name>mapred.tasktracker.map.tasks.maximum</name>
-    <value>4</value>
+    <value>8</value>
     <description>The maximum number of map tasks that will be run
     simultaneously by a task tracker.
     </description>
   </property>
 
   <property>
-    <name>mapred.tasktracker.map.tasks.maximum</name>
+      <name>mapred.map.tasks</name>
     <value>4</value>
   </property>
 
   <property>
     <name>mapred.child.java.opts</name>
-    <value>-Xmx50g -Xmx50g</value>
+    <value>-Xms7g -Xmx7g</value>
   </property>
 
   <property>
     <name>mapred.tasktracker.reduce.tasks.maximum</name>
-    <value>4</value>
+    <value>-1</value>
     <description>The maximum number of reduce tasks that will be run
     simultaneously by a task tracker.
     </description>
   </property>
+
+
 
 </configuration>

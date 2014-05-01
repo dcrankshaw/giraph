@@ -7,7 +7,7 @@
 
 # The java implementation to use.  Required.
 export JAVA_HOME=/usr/lib/jvm/java-1.7.0
-export HADOOP_DATANODE_OPTS="-Xmx50g -Xms50g"
+# export HADOOP_DATANODE_OPTS="-Xmx8g -Xms8g"
 
 # Extra Java CLASSPATH elements.  Optional.
 # export HADOOP_CLASSPATH=
@@ -16,8 +16,8 @@ export HADOOP_HOME="/root/ephemeral-hdfs"
 export HADOOP_MAPREDUCE_HOME="/root/mapreduce"
 
 # The maximum amount of heap to use, in MB. Default is 1000.
-export HADOOP_HEAPSIZE=880000
 # export HADOOP_HEAPSIZE=1000
+export HADOOP_HEAPSIZE=880000
 
 # Extra Java runtime options.  Empty by default.
 # export HADOOP_OPTS=-server
